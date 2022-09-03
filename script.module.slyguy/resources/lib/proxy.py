@@ -1043,7 +1043,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         if not self._session.get('session'):
             self._session['session'] = RawSession(verify=self._session.get('verify'), timeout=self._session.get('timeout'))
             self._session['session'].set_dns_rewrites(self._session.get('dns_rewrites', []))
-            self._session['session'].set_proxy(self._session.get('proxy_server'))
+            if self._session.get('stream_proxying'):
+                self._session['session'].set_proxy(self._session.get('proxy_server'))
             self._session['session'].set_cert(self._session.get('cert'))
         else:
             self._session['session'].headers.clear()

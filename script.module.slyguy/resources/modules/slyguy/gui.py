@@ -462,6 +462,7 @@ class Item(object):
                 'timeout': settings.common_settings.getInt('http_timeout', 30),
                 'dns_rewrites': get_dns_rewrites(self.dns_rewrites),
                 'proxy_server': settings.get('proxy_server') or settings.common_settings.get('proxy_server'),
+                'stream_proxying': settings.getBool('stream_proxying', True),
             }
 
             if mimetype == 'application/vnd.apple.mpegurl':

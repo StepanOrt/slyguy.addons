@@ -751,5 +751,9 @@ msgid "Proxy Server"
 msgstr ""
 
 msgctxt "#32148"
+msgid "Stream proxying"
+msgstr ""
+
+msgctxt "#32148"
 msgid "Trailer not found"
 msgstr ""
